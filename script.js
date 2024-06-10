@@ -21,11 +21,21 @@ const getChatResponse = async () => {
     chatContainer.appendChild(pEle);
 }
 
+// Function to handle sending the message
+const sendMessage = () => {
+    getChatResponse();
+};
+
 chatInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
         e.preventDefault();
         getChatResponse();
     }
+});
+
+sendButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    sendMessage();
 });
 
 const handleAPI = () => {
